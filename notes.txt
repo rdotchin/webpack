@@ -1,0 +1,12 @@
+
+node_modules/.bin/webpack src/main.js dist/bundle.js
+
+monitor for changes
+node_modules/.bin/webpack src/main.js dist/bundle.js --watch
+
+package.json
+
+"scripts": {
+"build": "webpack src/main.js dist/bundle.js"
+},
+

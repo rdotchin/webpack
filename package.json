@@ -1,0 +1,24 @@
+{
+  "name": "webpack-learning",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack src/main.js dist/bundle.js",
+    "watch": "webpack src/main.js dist/bundle.js --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rdotchin/webpack-learning.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rdotchin/webpack-learning/issues"
+  },
+  "homepage": "https://github.com/rdotchin/webpack-learning#readme",
+  "devDependencies": {
+    "webpack": "^2.6.1"
+  }
+}
