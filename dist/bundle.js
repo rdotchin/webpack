@@ -70,7 +70,7 @@
 /* 0 */
 /***/ (function(module, exports) {
 
-alert("Hello World!");
+alert("Hello World! test");
 
 /***/ })
 /******/ ]);

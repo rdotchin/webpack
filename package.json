@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "webpack src/main.js dist/bundle.js",
-    "watch": "webpack src/main.js dist/bundle.js --watch"
+    "build": "node_modules/.bin/webpack",
+    "watch": "npm run build -- --watch"
   },
   "repository": {
     "type": "git",
