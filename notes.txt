@@ -13,3 +13,8 @@ package.json
 
 npm install css-loader --save-dev
 npm install style-loader --save-dev
+
+npm install --save-dev babel-loader babel-core
+npm install --save-dev babel-cli babel-preset-es2015
+echo '{ "presets": ["es2015"] }' > .babelrc
+

@@ -63,17 +63,45 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 6);
+/******/ 	return __webpack_require__(__webpack_require__.s = 2);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
 /***/ (function(module, exports, __webpack_require__) {
 
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+// ES6 version of module.exports
+/*export default function (message) {
+    alert(message);
+}*/
+
+function notify(message) {
+    alert(message);
+}
+
+function log(message) {
+    console.log(message);
+}
+
+exports.default = {
+    notify: notify,
+    log: log
+};
+
+/***/ }),
+/* 1 */
+/***/ (function(module, exports, __webpack_require__) {
+
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(2);
+var content = __webpack_require__(3);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // Prepare cssTransformation
 var transform;
@@ -81,7 +109,7 @@ var transform;
 var options = {}
 options.transform = transform
 // add the styles to the DOM
-var update = __webpack_require__(4)(content, options);
+var update = __webpack_require__(5)(content, options);
 if(content.locals) module.exports = content.locals;
 // Hot Module Replacement
 if(false) {
@@ -98,33 +126,47 @@ if(false) {
 }
 
 /***/ }),
-/* 1 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-// ES6 version of module.exports
-/*export default function (message) {
-    alert(message);
-}*/
-
-function notify (message) {
-    alert(message);
-}
-
-function log (message) {
-    console.log(message);
-}
-
-/* harmony default export */ __webpack_exports__["a"] = ({
-    notify: notify,
-    log: log
-});
-
-/***/ }),
 /* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(3)(undefined);
+"use strict";
+
+
+var _Notification = __webpack_require__(0);
+
+var _Notification2 = _interopRequireDefault(_Notification);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } } // ES6 version of require export
+/*import notify from './Notification';*/
+/*
+import notification from './Notification';
+
+notify("Hello");
+log("World!");*/
+
+_Notification2.default.notify('hello');
+_Notification2.default.log('world');
+
+__webpack_require__(1);
+
+var Form = function Form() {
+    _classCallCheck(this, Form);
+
+    var numbers = [5, 10, 15].map(function (number) {
+        return number * 2;
+    });
+    console.log(numbers);
+};
+
+new Form();
+
+/***/ }),
+/* 3 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(4)(undefined);
 // imports
 
 
@@ -135,7 +177,7 @@ exports.push([module.i, "body {\n    background: red;\n}", ""]);
 
 
 /***/ }),
-/* 3 */
+/* 4 */
 /***/ (function(module, exports) {
 
 /*
@@ -217,7 +259,7 @@ function toComment(sourceMap) {
 
 
 /***/ }),
-/* 4 */
+/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -263,7 +305,7 @@ var singleton = null;
 var	singletonCounter = 0;
 var	stylesInsertedAtTop = [];
 
-var	fixUrls = __webpack_require__(5);
+var	fixUrls = __webpack_require__(6);
 
 module.exports = function(list, options) {
 	if (typeof DEBUG !== "undefined" && DEBUG) {
@@ -576,7 +618,7 @@ function updateLink (link, options, obj) {
 
 
 /***/ }),
-/* 5 */
+/* 6 */
 /***/ (function(module, exports) {
 
 
@@ -669,28 +711,6 @@ module.exports = function (css) {
 	return fixedCss;
 };
 
-
-/***/ }),
-/* 6 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Notification__ = __webpack_require__(1);
-// ES6 version of require export
-/*import notify from './Notification';*/
-/*
-import notification from './Notification';
-
-notify("Hello");
-log("World!");*/
-
-
-
-__WEBPACK_IMPORTED_MODULE_0__Notification__["a" /* default */].notify('hello');
-__WEBPACK_IMPORTED_MODULE_0__Notification__["a" /* default */].log('world');
-
-__webpack_require__(0);
 
 /***/ })
 /******/ ]);

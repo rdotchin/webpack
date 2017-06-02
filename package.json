@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "node_modules/.bin/webpack",
+    "dev": "node_modules/.bin/webpack",
+    "production": "NODE_ENV=production node_modules/.bin/webpack",
     "watch": "npm run build -- --watch"
   },
   "repository": {
@@ -19,6 +20,10 @@
   },
   "homepage": "https://github.com/rdotchin/webpack-learning#readme",
   "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-core": "^6.24.1",
+    "babel-loader": "^7.0.0",
+    "babel-preset-es2015": "^6.24.1",
     "css-loader": "^0.28.4",
     "style-loader": "^0.18.1",
     "webpack": "^2.6.1"
