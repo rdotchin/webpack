@@ -10,3 +10,6 @@ package.json
 "build": "webpack src/main.js dist/bundle.js"
 },
 
+
+npm install css-loader --save-dev
+npm install style-loader --save-dev
