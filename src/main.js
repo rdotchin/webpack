@@ -11,7 +11,7 @@ import notification from './Notification';
 notification.notify('hello');
 notification.log('world');
 
-require('./main.css');
+require('./main.scss');
 
 class Form {
     constructor() {

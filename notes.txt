@@ -18,3 +18,4 @@ npm install --save-dev babel-loader babel-core
 npm install --save-dev babel-cli babel-preset-es2015
 echo '{ "presets": ["es2015"] }' > .babelrc
 
+npm install sass-loader node-sass --save-dev

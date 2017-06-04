@@ -10,6 +10,14 @@ module.exports = {
     },
     module: {
         rules: [
+            {
+                test: /\.s[ac]ss$/, //look for either .sass or .scss
+                use: ['style-loader', 'css-loader', 'sass-loader'] //sass-loader compiles Sass to css
+                /*in webpack it goes right to left.
+                *sass-loader: This will compile Sass files to CSS (sass-loader),
+                *css-loader: updates imports and urls calls wraps css in a common js file so wepback can read it
+                * style-loader: physically injects it into the DOM*/
+            },
             { //use css-loader to transform any stylesheets webpack comes across
                 test: /\.css$/,
                 use: ['style-loader', 'css-loader']
