@@ -11,7 +11,9 @@ import notification from './Notification';
 notification.notify('hello');
 notification.log('world');
 
-require('./main.scss');
+/*
+don't need to reference this since it's in the app entry point in webpack.config
+require('./main.scss');*/
 
 class Form {
     constructor() {

@@ -19,3 +19,9 @@ npm install --save-dev babel-cli babel-preset-es2015
 echo '{ "presets": ["es2015"] }' > .babelrc
 
 npm install sass-loader node-sass --save-dev
+
+npm install extract-text-webpack-plugin --save-dev
+
+npm install file-loader --save-dev
+
+npm install  html-webpack-plugin --save-dev
