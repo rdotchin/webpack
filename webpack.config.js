@@ -3,6 +3,7 @@ const path = require('path'); //absolute path for output
 const glob = require('glob');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 const PurifyCSSPlugin = require('purifycss-webpack');
 const inProduction = process.env.NODE_ENV === 'production';
 
@@ -16,7 +17,12 @@ module.exports = {
         },
     output: {
         path: path.resolve(__dirname, './dist'), //would be path.resolve(__dirname, './dist') if sourcing to index.html in root
-        filename: '[name].js' //will take the app name from entry
+        /*
+        *[name]: will take the app name from entry because of the [name] placeholder
+        *[chunkhash]: webpack will create a unique hash for the build.  Usefull to teach server & browser to cache for a long time
+        as long as the number does not change the server does not need to retrieve a new copy of the code becuase it has not changed.
+        */
+        filename: '[name].[chunkhash].js'
     },
     module: {
         rules: [
@@ -55,9 +61,9 @@ module.exports = {
             }
         ]
     },
-    //webpack plugins
+    //webpack plugins, when adding referred to as "new up a plugin"
     plugins: [
-        new ExtractTextPlugin('[name].css'), //extract CSS to a dedicated traditional stylesheet
+        new ExtractTextPlugin('[name].[hash].css'), //extract CSS to a dedicated traditional stylesheet
 
         new webpack.LoaderOptionsPlugin({
             minimize: inProduction, //if inProduction is true the css will minimize
@@ -70,7 +76,15 @@ module.exports = {
         new PurifyCSSPlugin({
             paths: glob.sync(path.join(__dirname, 'index.html')),
             minimize: inProduction
-        })
+        }),
+
+        new CleanWebpackPlugin('dist', {
+                root:     __dirname, //current directory
+                verbose:  true,
+                dry:      false
+            }
+
+        ),
     ]
 };
 
