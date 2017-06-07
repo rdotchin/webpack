@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 2);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -73,13 +73,9 @@
 "use strict";
 
 
-var _Notification = __webpack_require__(2);
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var _Notification2 = _interopRequireDefault(_Notification);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } } // ES6 version of require export
+// ES6 version of require export
 /*import notify from './Notification';*/
 /*
 import notification from './Notification';
@@ -87,8 +83,10 @@ import notification from './Notification';
 notify("Hello");
 log("World!");*/
 
-_Notification2.default.notify('hello');
-_Notification2.default.log('world');
+//import notification from './Notification';
+
+/*notification.notify('hello');
+notification.log('world');*/
 
 /*
 don't need to reference this since it's in the app entry point in webpack.config
@@ -113,34 +111,6 @@ new Form();
 
 /***/ }),
 /* 2 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-// ES6 version of module.exports
-/*export default function (message) {
-    alert(message);
-}*/
-
-function notify(message) {
-    alert(message);
-}
-
-function log(message) {
-    console.log(message);
-}
-
-exports.default = {
-    notify: notify,
-    log: log
-};
-
-/***/ }),
-/* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(0);

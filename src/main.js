@@ -6,10 +6,10 @@ import notification from './Notification';
 notify("Hello");
 log("World!");*/
 
-import notification from './Notification';
+//import notification from './Notification';
 
-notification.notify('hello');
-notification.log('world');
+/*notification.notify('hello');
+notification.log('world');*/
 
 /*
 don't need to reference this since it's in the app entry point in webpack.config

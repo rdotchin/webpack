@@ -1,7 +1,9 @@
 const webpack = require('webpack');
 const path = require('path'); //absolute path for output
+const glob = require('glob');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const PurifyCSSPlugin = require('purifycss-webpack');
 const inProduction = process.env.NODE_ENV === 'production';
 
 
@@ -13,7 +15,7 @@ module.exports = {
             ]
         },
     output: {
-        path: path.resolve(__dirname, './dist'),
+        path: path.resolve(__dirname, './dist'), //would be path.resolve(__dirname, './dist') if sourcing to index.html in root
         filename: '[name].js' //will take the app name from entry
     },
     module: {
@@ -63,6 +65,11 @@ module.exports = {
         new HtmlWebpackPlugin ({
             inject: true,
             template: './index.html'
+        }),
+        //clean up any unused css code
+        new PurifyCSSPlugin({
+            paths: glob.sync(path.join(__dirname, 'index.html')),
+            minimize: inProduction
         })
     ]
 };

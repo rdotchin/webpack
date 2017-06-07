@@ -25,3 +25,6 @@ npm install extract-text-webpack-plugin --save-dev
 npm install file-loader --save-dev
 
 npm install  html-webpack-plugin --save-dev
+
+This plugin uses PurifyCSS to remove unused selectors from your CSS. You should use it with the extract-text-webpack-plugin.
+npm i -D purifycss-webpack purify-css
