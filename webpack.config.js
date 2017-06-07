@@ -38,7 +38,11 @@ module.exports = {
                 *css-loader: updates imports and urls calls wraps css in a common js file so wepback can read it
                 * style-loader: physically injects it into the DOM*/
             },
-
+            {
+                //checks for any of these fonts and imports them ex. bootstrap font
+                test: /\.(svg|eot|ttf|woff|woff2)$/,
+                use: 'file-loader'
+            },
             /*look for these file types and use either:
             *url-loader: if file is small enough it will load directly to css file, anything over a certain
             size you can instruct where to move it.
@@ -46,11 +50,18 @@ module.exports = {
             * raw-loader:
             */
             {
-                test: /\.(png|jpg|gif|svg|eot|ttf|woff|woff2)$/,
-                loader: 'file-loader',
-                options: {
-                    name: 'images/[name].[hash].[ext]' //can add hash for cache busting
-                }
+                test: /\.(png|jpg|gif)$/,
+                loaders: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            name: 'images/[name].[hash].[ext]' //can add hash for cache busting
+                        }
+                    },
+                    //minimize file size for pictures, gifs, etc
+                    'img-loader'
+                ],
+
             },
 
             {
@@ -77,7 +88,7 @@ module.exports = {
             paths: glob.sync(path.join(__dirname, 'index.html')),
             minimize: inProduction
         }),
-
+        //remove/clean build(dist) folder before building
         new CleanWebpackPlugin('dist', {
                 root:     __dirname, //current directory
                 verbose:  true,

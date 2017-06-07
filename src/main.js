@@ -23,3 +23,5 @@ class Form {
 }
 
 new Form();
+
+import zelda from './images/zelda.jpg';
