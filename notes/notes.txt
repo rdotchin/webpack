@@ -1,0 +1,36 @@
+
+node_modules/.bin/webpack src/main.js dist/bundle.js
+
+monitor for changes
+node_modules/.bin/webpack src/main.js dist/bundle.js --watch
+
+package.json
+
+"scripts": {
+"build": "webpack src/main.js dist/bundle.js"
+},
+
+
+npm install css-loader --save-dev
+npm install style-loader --save-dev
+
+npm install --save-dev babel-loader babel-core
+npm install --save-dev babel-cli babel-preset-es2015
+echo '{ "presets": ["es2015"] }' > .babelrc
+
+npm install sass-loader node-sass --save-dev
+
+npm install extract-text-webpack-plugin --save-dev
+
+npm install file-loader --save-dev
+
+npm install  html-webpack-plugin --save-dev
+
+This plugin uses PurifyCSS to remove unused selectors from your CSS. You should use it with the extract-text-webpack-plugin.
+npm i -D purifycss-webpack purify-css
+
+A webpack plugin to remove/clean your build folder(s) before building
+npm i clean-webpack-plugin --save-dev
+
+Image minimizing loader for webpack 2, meant to be used with url-loader, file-loader, or raw-loader
+npm install img-loader --save-dev
